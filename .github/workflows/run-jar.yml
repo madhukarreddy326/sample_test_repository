@@ -20,6 +20,6 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'  # Change to the version of JDK required by your jar
-
+        distribution: 'temurin'  # Use 'temurin' as the JDK distribution
     - name: Run the jar file
       run: java -jar RunJar.jar
