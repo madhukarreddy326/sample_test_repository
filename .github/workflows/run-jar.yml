@@ -1,0 +1,25 @@
+name: Run Jar File
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-jar:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'  # Change to the version of JDK required by your jar
+
+    - name: Run the jar file
+      run: java -jar RunJar.jar
